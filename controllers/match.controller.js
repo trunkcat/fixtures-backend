@@ -104,6 +104,7 @@ export async function updateMatch(req, res) {
         const membership = await clubMembers.findOne({
             clubId: tournament.clubId,
             userId: new ObjectId(req.user.id),
+            role: { $in: ["admin", "owner"] },
         });
         if (membership == null) {
             return res.status(403).json({
