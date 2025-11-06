@@ -108,7 +108,7 @@ export async function updateMatch(req, res) {
         });
         if (membership == null) {
             return res.status(403).json({
-                message: "You are not a member of this club",
+                message: "You have no permission to do that",
             });
         }
 
@@ -303,7 +303,7 @@ export async function endMatch(req, res) {
         });
         if (membership == null) {
             return res.status(403).json({
-                message: "You do not have the permissions to do this action",
+                message: "You have no permission to do that",
             });
         }
 
